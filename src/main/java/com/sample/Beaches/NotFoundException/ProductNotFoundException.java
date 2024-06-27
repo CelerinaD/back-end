@@ -1,4 +1,4 @@
-package com.sample.NotFoundException;
+package com.sample.Beaches.NotFoundException;
 
 public class ProductNotFoundException extends RuntimeException {
     public ProductNotFoundException(Long id){

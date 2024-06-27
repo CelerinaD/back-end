@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sample.Beaches.Model.Product;
+import com.sample.Beaches.NotFoundException.ProductNotFoundException;
 import com.sample.Beaches.Repository.ProductRepository;
-import com.sample.NotFoundException.ProductNotFoundException;
 
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -49,12 +49,6 @@ public class ProductController {
     // UPDATE ENDPOINTS
     // http://127.0.0.1:8080/product/edit/1
     @PutMapping("product/edit/{id}")
-    public String putMethodName(@PathVariable String id, @RequestBody String entity) {
-        // TODO: process PUT request
-
-        return entity;
-    }
-
     public Product updateProduct(@PathVariable Long id, @RequestBody Product newProduct) {
         return repo.findById(id)
                 .map(product -> {
