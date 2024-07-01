@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.Beaches.Model.Product;
 import com.sample.Beaches.Model.User;
-import com.sample.Beaches.NotFoundException.ProductNotFoundException;
 import com.sample.Beaches.NotFoundException.UserNotFoundException;
 import com.sample.Beaches.Repository.UserRepository;
 
