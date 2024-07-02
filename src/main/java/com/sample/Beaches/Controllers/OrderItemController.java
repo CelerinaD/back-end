@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sample.Beaches.Model.OrderItem;
-import com.sample.Beaches.NotFoundException.OrderNotFoundException;
+import com.sample.Beaches.NotFoundException.OrderItemNotFoundException;
 import com.sample.Beaches.Repository.OrderItemRepository;
 
 
@@ -28,14 +28,14 @@ public class OrderItemController {
     }
 
      @GetMapping("/orderItem/{id}")
-     public Order getOrderItem(@PathVariable Long id) {
+     public OrderItem getOrderItem(@PathVariable Long id) {
          return repo.findById(id).orElseThrow(
-            () -> new OrderNotFoundException(id)
+            () -> new OrderItemNotFoundException(id)
             );
      }
 
-    @PostMapping("/order/new")
-    public String addOrderItem(@RequestBody OrderItem newOrder){
+    @PostMapping("/orderItem/new")
+    public String addOrderItem(@RequestBody OrderItem newOrderItem){
         repo.save(newOrderItem);
         return "A new order item is created.";
     }
@@ -47,10 +47,6 @@ public class OrderItemController {
         return "The order item is deleted!";
     }
 
-
-
-}
-    
 
 
 }
