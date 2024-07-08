@@ -1,4 +1,4 @@
-package com.sample.Config;
+package com.sample.Beaches.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,18 +33,15 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
-
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-
         http.csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers(HttpMethod.GET, "/api/v1/**").permitAll()
-                             .requestMatchers("/api/v1/auth/**").permitAll()
-                             .anyRequest().authenticated()
-                );
-
-            return http.build();
+        .authorizeHttpRequests((authorize) ->
+            authorize.requestMatchers(HttpMethod.GET,"/api/v1/**").permitAll()
+            .requestMatchers("/api/v1/auth/**").permitAll()
+            .anyRequest().authenticated()
+        );
+        return http.build();
     }
 
 }

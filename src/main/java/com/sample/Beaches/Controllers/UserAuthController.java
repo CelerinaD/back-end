@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sample.Beaches.DTO.RegistrationRequest;
 import com.sample.Beaches.Model.Role;
 import com.sample.Beaches.Model.UserAuth;
 import com.sample.Beaches.Repository.RoleRepository;
 import com.sample.Beaches.Repository.UserAuthRepository;
-import com.sample.DTO.RegistrationRequest;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -29,10 +29,10 @@ public class UserAuthController {
     RoleRepository roleRepository;
 
     @Autowired
-    PasswordEncoder passwordEncoder;
+    AuthenticationManager authenticationManager;
 
     @Autowired
-    AuthenticationManager authenticationManager;
+    PasswordEncoder passwordEncoder;
 
 
     @PostMapping("/register")

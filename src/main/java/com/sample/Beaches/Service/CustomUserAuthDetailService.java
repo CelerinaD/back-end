@@ -1,4 +1,4 @@
-package com.sample.Service;
+package com.sample.Beaches.Service;
 
 import java.util.Set;
 import java.util.stream.Collectors;

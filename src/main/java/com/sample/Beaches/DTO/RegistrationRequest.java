@@ -1,4 +1,4 @@
-package com.sample.DTO;
+package com.sample.Beaches.DTO;
 
 public class RegistrationRequest {
     private String username;
